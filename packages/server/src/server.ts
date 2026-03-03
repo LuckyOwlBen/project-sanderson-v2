@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import userRoutes from './routes/users';
+import { TalentsRoute } from './routes/talentsRoute';
 
 dotenv.config();
 
@@ -18,7 +18,8 @@ app.get('/api/health', (req, res) => {
 });
 
 // API Routes
-app.use('/api/users', userRoutes);
+const talentsRoute = new TalentsRoute();
+app.use('/api/talents', talentsRoute.getRouter());
 
 // Start server
 app.listen(PORT, () => {

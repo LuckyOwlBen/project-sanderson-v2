@@ -1,16 +1,30 @@
-import js from '@eslint/js';
+// eslint.config.js / eslint.config.mjs (flat config example)
 import tseslint from 'typescript-eslint';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default [
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
   {
-    files: ['src/**/*.ts'],
-    rules: {
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-    },
+    files: ['packages/server/**/*.ts'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: ['./packages/server/tsconfig.json'],
+        tsconfigRootDir: __dirname
+      }
+    }
   },
   {
-    ignores: ['dist', 'node_modules', 'coverage'],
-  },
+    files: ['packages/client/**/*.ts', 'packages/client/**/*.tsx'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: ['./packages/client/tsconfig.json'],
+        tsconfigRootDir: __dirname
+      }
+    }
+  }
 ];

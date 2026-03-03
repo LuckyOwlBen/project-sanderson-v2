@@ -1,4 +1,4 @@
-import { ApiResponse, User } from '@sanderson/shared';
+import { ApiResponse, User } from '@project-sanderson/shared';
 
 describe('Shared Types', () => {
   it('should have ApiResponse interface with success property', () => {

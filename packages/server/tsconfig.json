@@ -13,7 +13,21 @@
     "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@project-sanderson/shared": ["../shared/dist"],
+      "@project-sanderson/shared/*": ["../shared/dist/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "paths": {
+        "@project-sanderson/shared": ["../shared/dist"],
+        "@project-sanderson/shared/*": ["../shared/dist/*"]
+      }
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

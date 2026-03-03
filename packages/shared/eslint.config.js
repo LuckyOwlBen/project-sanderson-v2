@@ -6,6 +6,11 @@ export default [
   ...tseslint.configs.recommended,
   {
     files: ['src/**/*.ts'],
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },

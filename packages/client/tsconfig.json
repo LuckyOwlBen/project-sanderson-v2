@@ -13,7 +13,11 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "paths": {
+      "@project-sanderson/shared": ["../shared/dist"],
+      "@project-sanderson/shared/*": ["../shared/dist/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
