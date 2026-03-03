@@ -1,0 +1,5 @@
+{
+  "*.ts": "npx eslint --fix --cache",
+  "*.tsx": "npx eslint --fix --cache",
+  "*.{ts,tsx,html,json,css}": "npx prettier --write --cache"
+}
