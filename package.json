@@ -1,0 +1,32 @@
+{
+  "name": "project-sanderson",
+  "version": "1.0.0",
+  "description": "Monorepo with Angular frontend and Node.js/Prisma backend",
+  "private": true,
+  "workspaces": [
+    "packages/server",
+    "packages/client",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev --workspace=packages/server",
+    "dev:client": "npm run start --workspace=packages/client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "lint": "npm run lint --workspaces",
+    "lint:fix": "npm run lint:fix --workspaces",
+    "test": "npm run test --workspaces",
+    "test:cov": "npm run test:cov --workspaces",
+    "format": "prettier --write \"packages/**/*.{ts,tsx,html,css,json}\""
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^10.0.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.1",
+    "prettier": "^3.8.1",
+    "typescript-eslint": "^8.56.1"
+  }
+}

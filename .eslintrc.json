@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "ignorePatterns": ["dist", "node_modules", ".angular"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+          "off",
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"]
+    }
+  ]
+}
