@@ -137,3 +137,38 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+# Monorepo - Node modules (one per package)
+node_modules/
+packages/*/node_modules/
+
+# Build outputs
+dist/
+build/
+packages/*/dist/
+packages/*/build/
+
+# Angular build artifacts
+packages/client/.angular/
+packages/client/out-tsc/
+
+# Test coverage
+coverage/
+packages/*/coverage/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+packages/server/prisma/migrations/
+
+# IDE cache
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
