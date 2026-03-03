@@ -60,18 +60,31 @@ prettier --write packages/server/src
 ## Pre-commit Hooks
 
 Husky v10+ automatically runs the following checks before each commit:
-- **ESLint** - Checks TypeScript/JavaScript syntax and fixes auto-fixable issues
 - **Prettier** - Ensures code formatting consistency
 
-If pre-commit checks fail, the commit will be blocked. Fix errors with:
+**Note**: ESLint linting is run via `npm run lint` command (see Recommended Workflow below). It's not in pre-commit to fail faster and avoid blocking commits.
+
+### Recommended Workflow:
+
 ```bash
+# 1. Before committing, run linting
+npm run lint
+
+# 2. Fix any issues
 npm run lint:fix
+npm run format
+
+# 3. Stage and commit (pre-commit will format files with Prettier)
+git add .
+git commit -m "your message"
+```
+
+If pre-commit formatting fails, fix with:
+```bash
 npm run format
 git add .
 git commit
 ```
-
-The pre-commit hook is configured in `.husky/pre-commit` and runs `lint-staged` on all staged files.
 
 ## Adding Tests
 
