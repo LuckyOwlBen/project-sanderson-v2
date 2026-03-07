@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "lib": ["ES2020"],
+    "target": "ES2023",
+    "module": "ESNext",
+    "lib": ["ES2023"],
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
@@ -10,23 +10,13 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@project-sanderson/shared": ["../shared/dist"],
-      "@project-sanderson/shared/*": ["../shared/dist/*"]
-    }
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs",
-      "paths": {
-        "@project-sanderson/shared": ["../shared/dist"],
-        "@project-sanderson/shared/*": ["../shared/dist/*"]
-      }
+      "@project-sanderson/shared/*": ["../shared/src/shared/*"]
     }
   },
   "include": ["src"],

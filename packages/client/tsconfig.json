@@ -4,7 +4,6 @@
     "module": "esnext",
     "lib": ["ES2022", "dom"],
     "outDir": "./dist",
-    "rootDir": "./src",
     "useDefineForClassFields": true,
     "strict": true,
     "esModuleInterop": true,
@@ -14,9 +13,9 @@
     "declarationMap": true,
     "sourceMap": true,
     "moduleResolution": "bundler",
+    "baseUrl": ".",
     "paths": {
-      "@project-sanderson/shared": ["../shared/dist"],
-      "@project-sanderson/shared/*": ["../shared/dist/*"]
+      "@project-sanderson/shared/*": ["../shared/src/shared/*"]
     }
   },
   "include": ["src"],

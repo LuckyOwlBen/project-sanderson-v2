@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
-import { ApiResponse } from '@sanderson/shared';
-import { TalentsService } from '../services/talentsService/talentsService';
+import { ApiResponse } from '../lib/types.js';
+import { TalentsService } from '../services/talentsService/talentsService.js';
 
 export class TalentsRoute {
   private router = express.Router();

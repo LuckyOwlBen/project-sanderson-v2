@@ -1,9 +1,8 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
-import { TalentsRoute } from './routes/talentsRoute';
-
-dotenv.config();
+import { TalentsRoute } from './routes/talentsRoute.js';
+import { IdentityRoutes } from './routes/identityRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +19,9 @@ app.get('/api/health', (req, res) => {
 // API Routes
 const talentsRoute = new TalentsRoute();
 app.use('/api/talents', talentsRoute.getRouter());
+
+const identityRoute = new IdentityRoutes();
+app.use('/api/identity', identityRoute.getRouter());
 
 // Start server
 app.listen(PORT, () => {

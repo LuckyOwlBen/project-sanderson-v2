@@ -1,8 +1,17 @@
-import { TalentsRequest } from '@project-sanderson/shared/dtos/requests/talentsRequest';
-import { TalentsResponse } from '@project-sanderson/shared/dtos/responses/talentsResponse';
+export interface TalentsRequest {
+  [key: string]: any;
+}
+
+export class TalentsResponse {
+  data?: TalentsRequest;
+
+  constructor(data?: TalentsRequest) {
+    this.data = data;
+  }
+}
 
 export class TalentsService {
   getTalentsForCharacter(characterData: TalentsRequest): TalentsResponse {
-    return new TalentsResponse();
+    return new TalentsResponse(characterData);
   }
 }

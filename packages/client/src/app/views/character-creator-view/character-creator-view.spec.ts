@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TalentView } from './talent-view';
+import { CharacterCreatorView } from './character-creator-view';
 
-describe('TalentView', () => {
-  let component: TalentView;
-  let fixture: ComponentFixture<TalentView>;
+describe('CharacterCreatorView', () => {
+  let component: CharacterCreatorView;
+  let fixture: ComponentFixture<CharacterCreatorView>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TalentView],
+      imports: [CharacterCreatorView],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TalentView);
+    fixture = TestBed.createComponent(CharacterCreatorView);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
